@@ -90,7 +90,7 @@ class HttpEntity:
         url = self.host + api_name
         data = urllib.urlencode(value)
         last_url = url + '?' + data
-        # last_url = http://offline.esb.test.wingontravel.com/Services/PackageFHOnlineDynamic/Basic/Zones?$top=1
+        # last_url = http://xxx/xx/xxx/xx/Zones?$top=1
         request = urllib2.Request(last_url)
         # response = urllib2.urlopen(request)
         if environment == 'Test':
