@@ -1,0 +1,22 @@
+#box{list-style:none;margin:0;padding:0;margin-left:2%;margin-top:1%;}
+#box li {
+    color: #0084F3;
+    text-align: center;
+    width: 60px;
+    height: 40px;
+    border: 1px solid #ebebeb;
+    line-height: 40px;
+    box-sizing: border-box;
+    cursor: pointer;
+    float: left;
+}
+#box li a{
+   display:block;
+   width: 60px;
+   height: 40px;
+   line-height: 40px;
+}
+#box .active{background: #0084F3}
+#box .active a{color: white;}
+#box li a{text-decoration:none;}
+#box span{margin-left: 20px;height: 40px;line-height: 40px;}

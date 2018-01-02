@@ -1,0 +1,109 @@
+<div id="search_thread">
+        <table>
+            <tr>
+                <td class="ClickExecutionTime2">用例开始时间</td>
+                <td class="testCase__Description2">用例中文描述</td>
+                {% ifequal api_type 'RestAPI' %}
+                    <td class="testCase__ApiName2">接口名称</td>
+                    {% ifequal case_type 1 %}
+                        <td class="SubCaseID_id2">ID</td>
+                        <td class="SubCaseID__SetupType2">步骤类型</td>
+                        <td class="Environment2">环境</td>
+                    {% else %}
+                        <td class="testCase_id2">ID</td>
+                        <td class="testCase__SetupStep2">子用例步骤</td>
+                        <td class="Environment2">环境</td>
+                        <td class="Status2">结果</td>
+                    {% endifequal %}
+                {% else %}
+                    {% ifequal case_type 1 %}
+                        <td class="soapSubCase_id2">ID</td>
+                        <td class="SubCaseID__SetupType2">步骤类型</td>
+                        <td class="Environment2">环境</td>
+                    {% else %}
+                        <td class="soapTestCase_id2">ID</td>
+                        <td class="soapTestCase__SetupStep2">子用例步骤</td>
+                        <td class="Environment2">环境</td>
+                        <td class="Status2">结果</td>
+                    {% endifequal %}
+                {% endifequal %}
+
+            </tr>
+        </table>
+</div>
+<div id="accordion">
+
+    {% for result_node in result %}
+        {% ifequal api_type 'RestAPI' %}
+            {% ifequal case_type 0 %}
+                <div class="div_title">
+                    <table>
+                        <tr class="table_content">
+                            <td class="ClickExecutionTime">{{ result_node.ClickExecutionTime }}</td>
+                            <td class="testCase__Description" title="{{ result_node.testCase__Description }}">{{ result_node.testCase__Description }}</td>
+                            <td class="testCase__ApiName" title="{{ result_node.testCase__ApiName }}">{{ result_node.testCase__ApiName }}</td>
+                            <td class="testCase_id">{{ result_node.testCase_id }}</td>
+                            <td class="testCase__SetupStep" title="{{ result_node.testCase__SetupStep }}">{{ result_node.testCase__SetupStep }}</td>
+                            <td class="Environment">{{ result_node.Environment }}</td>
+                            <td class="Status">{{ result_node.Status }}</td>
+
+                        </tr>
+                    </table>
+                </div>
+            {% else %}
+                <div class="div_title">
+                <table>
+                    <tr class="table_content">
+                        <td class="ClickExecutionTime">{{ result_node.ClickExecutionTime }}</td>
+                        <td class="SubCaseID__Description" title="{{ result_node.SubCaseID__Description }}">{{ result_node.SubCaseID__Description }}</td>
+                        <td class="SubCaseID__ApiName" title="{{ result_node.SubCaseID__ApiName }}">{{ result_node.SubCaseID__ApiName }}</td>
+                        <td class="SubCaseID_id">{{ result_node.SubCaseID_id }}</td>
+                        <td class="SubCaseID__SetupType" title="{{ result_node.SubCaseID__SetupType }}">{{ result_node.SubCaseID__SetupType }}</td>
+                        <td class="Environment">{{ result_node.Environment }}</td>
+                    </tr>
+                </table>
+              </div>
+            {% endifequal %}
+            <div style="height=auto;">
+                    <p style="height=auto;">{{ result_node.APIResult }}</p>
+                 <!--<pre style="width:100%;height:100%" id="data-test">{{ result_node.APIResult }}</pre>-->
+            </div>
+        {% else %}
+            {% ifequal case_type 0 %}
+                <div class="div_title">
+                    <table>
+                        <tr class="table_content">
+                            <td class="ClickExecutionTime">{{ result_node.ClickExecutionTime }}</td>
+                            <!--<td class="testCase__ApiName" title="{{ result_node.testCase__ApiName }}">{{ result_node.testCase__ApiName }}</td>-->
+                            <td class="soapTestCase__Description" title="{{ result_node.soapTestCase__Description }}">{{ result_node.soapTestCase__Description }}</td>
+                            <td class="soapTestCase_id">{{ result_node.soapTestCase_id }}</td>
+                            <td class="soapTestCase__SetupStep" title="{{ result_node.soapTestCase__SetupStep }}">{{ result_node.soapTestCase__SetupStep }}</td>
+                            <td class="Environment">{{ result_node.Environment }}</td>
+                            <td class="Status">{{ result_node.Status }}</td>
+
+                        </tr>
+                    </table>
+                </div>
+            {% else %}
+                <div class="div_title">
+                <table>
+                    <tr class="table_content">
+                        <td class="ClickExecutionTime">{{ result_node.ClickExecutionTime }}</td>
+                        <!--<td class="SubCaseID__ApiName" title="{{ result_node.SubCaseID__ApiName }}">{{ result_node.SubCaseID__ApiName }}</td>-->
+                        <td class="soapSubCase__Description" title="{{ result_node.soapSubCase__Description }}">{{ result_node.soapSubCase__Description }}</td>
+                        <td class="soapSubCase_id">{{ result_node.soapSubCase_id }}</td>
+                        <td class="soapSubCase__SetupType" title="{{ result_node.soapSubCase__SetupType }}">{{ result_node.soapSubCase__SetupType }}</td>
+                        <td class="Environment">{{ result_node.Environment }}</td>
+                    </tr>
+                </table>
+              </div>
+            {% endifequal %}
+            <div style="height=auto;">
+                    <pre style="height=auto;">{{ result_node.APIResult }}</pre>
+            </div>
+
+
+        {% endifequal %}
+    {% endfor %}
+</div>
+<div class="box" id="box">{{ page_str|safe}}</div>

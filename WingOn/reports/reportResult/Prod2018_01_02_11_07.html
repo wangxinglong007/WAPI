@@ -1,0 +1,287 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+        
+        <meta charset="UTF-8">
+        <title>report</title>
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+        <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+        
+        <link rel="stylesheet" href="/static/WEB_API/css/common/jquery-ui-1.10.4.custom.min.css" />
+        <script type="text/javascript"  src="/static/WEB_API/js/common/jquery-1.10.2.js"></script>
+        <script type="text/javascript"  src="/static/WEB_API/js/common/jquery-ui-1.10.4.custom.js"></script>
+        <script type="text/javascript"  src="/static/WEB_API/js/common/jquery-ui-1.10.4.custom.min.js"></script>
+        
+        <link rel="stylesheet" href="E:\ctrip\work\backup\ApiCaseVersion\ApiCaseSystem\static\WEB_API\css\common\jquery-ui-1.10.4.custom.min.css" />
+        <script type="text/javascript"  src="E:\ctrip\work\backup\ApiCaseVersion\ApiCaseSystem\static\WEB_API\js\common\jquery-1.10.2.js"></script>
+        <script type="text/javascript"  src="E:\ctrip\work\backup\ApiCaseVersion\ApiCaseSystem\static\WEB_API\js\common\jquery-ui-1.10.4.custom.js"></script>
+        <script type="text/javascript"  src="E:\ctrip\work\backup\ApiCaseVersion\ApiCaseSystem\static\WEB_API\js\common\jquery-ui-1.10.4.custom.min.js"></script>
+
+        <script type="text/javascript">
+
+            $(function(){
+                $(".div_title").click(function(){
+                    $(this).next().slideToggle();
+                });
+            });
+        </script>
+        <script type="text/javascript">
+            $(function() {
+            var title_content=$('.title_content');
+            var i=0;
+            for( var i = 0; i < title_content.length; i++ ) {
+                    //alert(title_content.eq(i).children("td:last-child").html());
+                    var result_td=title_content.eq(i).children("td:last-child");
+                    if(result_td.html()!='Success'){
+                        result_td.css('color','red');
+                        result_td.parent().parent().parent().css('color','red');
+                    }
+            }
+            });
+        </script>
+        
+<style type="text/css">
+    *{margin: 0;padding: 0}
+    /*左侧API描述内容以及结果统计样式*/
+    #left_bar{width: 17%;margin-left: 1%; margin-top: 1.5%;float: left; position:fixed;top:1%;left:1%;}
+    #result_count{ margin-top: 4%;}
+    #report_des ul :first-child,#result_count ul :first-child{font-size: 16px}
+    #report_des ul,#result_count ul{ font-size: 14px; }
+    /*右侧报告内容样式*/
+    #right_bar{float: left;width:78%; margin-left: 2%; margin-top: 1%;-webkit-box-shadow: 0 0 5px #cccccc; padding: 0.5%;position: absolute;top: 1%; left: 19%}
+    #report_div{}
+    #report_th{background:#0084F3;color: white; height: 50px;}
+    /*固定表格具体宽度*/
+    /*
+    #report_th table tr td{background: red;}
+    .div_title table tr td{background: black;}*/
+    #report_th table{width: 99%; height:100%;text-align: center;margin-left: 1%;border-collapse: separate;text-align:left;}
+    /*用例ID*/
+    #report_th .CaseID2{width: 5%;}
+    /*接口名称*/
+    #report_th .ApiName2{width: 18%;}
+    /*用例中文描述*/
+    #report_th .Description2{width: 24%;}
+    /*编辑者*/
+    #report_th .Editor2{width: 10%;}
+    /*方法*/
+    #report_th .Method2{width: 5%;}
+    /*开始执行时间*/
+    #report_th .ExecutionTime2{width: 12%;}
+    /*执行消耗时间*/
+    #report_th .UseTime2{width: 10%;}
+    /**/
+    #report_th .Expect2{width: 10%;}
+
+
+    #report_div div:nth-child(even){display: none; padding-left:2%;padding-right:2%;background: #e7e7e7;word-wrap:break-word}
+    .div_title{margin-left: 1%;}
+    .div_title table{width: 99%;height:38px;text-align: center;border-collapse: separate;font-size: 12px;border-collapse: separate;table-layout: fixed;word-break: break-all; word-wrap: break-word;text-align: left;border-bottom:1px #DDD solid; }
+    .div_title table tr td{overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}
+    .div_title .CaseID {width: 5%;}
+    .div_title .ApiName {width: 18%;}
+    .div_title .Description {width: 24.5%;}
+    .div_title .Editor {width: 10%;}
+    .div_title .Method {width: 5%;}
+    .div_title .ExecutionTime {width: 12.5%;}
+    .div_title .UseTime {width: 10%;}
+    .div_title .Expect {width: 10%;}
+    .div_title .Status {color: #6c6;font-weight:bold;}
+    /*预期值相关*/
+    .ExpectResult_div{}
+    .ExpectResult{}
+    .ExpectResult_content{display: none;width:80px;text-align:center; z-index: 2;word-wrap:break-word;margin-top: 10px;}
+    xmp{font-size: 14px;font-family: 'Time New Romans'}
+    
+
+</style>
+        </head>
+        <body>
+            <div id="mainview">
+                <div id="left_bar">
+                    <div id="report_des">
+                        <ul class="list-group">
+                        <li class="list-group-item active">API Automation Description</li>
+                        <li class="list-group-item"><b>User:&nbsp;</b>yuxin</li>
+                        <li class="list-group-item"><b>StartTime:&nbsp;</b>2018-01-02 11:07:57</li>
+                        <li class="list-group-item"><b>UseTime:&nbsp;</b>0:00:00.633825</li>
+                        <li class="list-group-item"><b>Success:&nbsp;</b>与预期值校验正确</li>
+                        <li class="list-group-item"><b>Fail:&nbsp;</b>与预期值校验错误</li>
+                        <li class="list-group-item"><b>Error:&nbsp;</b>用例格式数据/输入错误/返回结果有问题等 </li>
+                        </ul>
+                    </div>
+            
+                    <div id="result_count">
+                        <ul class="list-group">
+                        <li class="list-group-item active">Result Count</li>
+            
+                        <li class="list-group-item"><b>Total:&nbsp;</b>1</li>
+                        <li class="list-group-item"><b>Success:&nbsp;</b>1</li>
+                        <li class="list-group-item"><b>Fail:&nbsp;</b>0</li>
+                        <li class="list-group-item"><b>Error:&nbsp;</b>0</li>
+                    </div>
+                </div>
+                <div id="right_bar">
+                        <div id="report_th">
+                                <table >
+                                    <tr>
+                                        
+                                        <td class="CaseID2">用例ID</td>
+                                        
+                                        <td class="ApiName2">接口名称</td>
+                                        
+                                        <td class="Description2">用例中文描述</td>
+                                        <td class="Editor2">编辑者</td>
+                                        <td class="Method2">方法</td>
+                                        <td class="ExecutionTime2">开始执行时间</td>
+                                        <td class="UseTime2">执行消耗时间</td>
+                                        <td class="Expect2">预期值</td>
+                                        <td class="Status2">结果</td>
+                                        
+                                        
+                                        
+                                    </tr>
+                                </table>
+                         </div>
+                    <div id="report_div">
+                        
+                        <div class="div_title">
+                            <table>
+                                <tr class="title_content">
+                                <td class="CaseID">129</td>
+                                
+                                <td class="ApiName" title="/api/Voyage">/api/Voyage</td>
+                                
+                                <td class="Description" title="turbojet来回程/当天去当天回/1成人/普通位">turbojet来回程/当天去当天回/1成人/普通位</td>
+                                <td class="Editor">yx</td>
+                                <td class="Method">post</td>
+                                <td class="ExecutionTime">2018-01-02 11:07:57</td>
+                                <td class="UseTime">0.605067968369</td>
+                                <td class="Expect" title="head_errcode:0">
+                                head_errcode:0
+                                </td>
+                                <td class="Status">Success</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                            <div>
+                                {
+  &quot;head&quot;: {
+    &quot;errcode&quot;: 0
+  },
+  &quot;data&quot;: [
+    {
+      &quot;$id&quot;: &quot;1&quot;,
+      &quot;route&quot;: &quot;M&quot;,
+      &quot;full_route&quot;: &quot;MACHKG&quot;,
+      &quot;flight_no&quot;: &quot;8SMM30&quot;,
+      &quot;departure_date_time_concrete&quot;: &quot;2018-01-02 12:30:00&quot;,
+      &quot;ticket_price&quot;: 160.0,
+      &quot;SupplierID&quot;: 1,
+      &quot;Markup&quot;: &quot;Bgt/QDJjs258mAlQ+VYMN1TPP7TIy5wJ5sm9vQbHZXtGqB0iDJGUh5m+1reZXgsOY0/synhZx7j1BQuxbcCtKNTnFVibZHtY4BhfNBG3OUzBg06/yhmUjmpPeWe8ocdvJvCuKviKK3kGJkZvH/uoixWEJczpTyn3YwZBB8IlkE65B+jcOwgnU2rm3GggybBBO6Jw5gHODND/ipRIgn04xW3d+Vwv1SssXjVX0nn8L/Po/c/+CA7RGg2cJoMGuMGeeGjuT5rYQf2KCkibYgXIOQ==&quot;
+    },
+    {
+      &quot;$id&quot;: &quot;2&quot;,
+      &quot;route&quot;: &quot;M&quot;,
+      &quot;full_route&quot;: &quot;MACHKG&quot;,
+      &quot;flight_no&quot;: &quot;8SMM45&quot;,
+      &quot;departure_date_time_concrete&quot;: &quot;2018-01-02 12:45:00&quot;,
+      &quot;ticket_price&quot;: 160.0,
+      &quot;SupplierID&quot;: 1,
+      &quot;Markup&quot;: &quot;Bgt/QDJjs258mAlQ+VYMN1TPP7TIy5wJ5sm9vQbHZXtGqB0iDJGUh5m+1reZXgsOY0/synhZx7j1BQuxbcCtKNTnFVibZHtY4BhfNBG3OUzBg06/yhmUjmpPeWe8ocdvJvCuKviKK3kGJkZvH/uoixWEJczpTyn3YwZBB8IlkE65B+jcOwgnU2rm3GggybBBO6Jw5gHODND/ipRIgn04xW3d+Vwv1SssXjVX0nn8L/Po/c/+CA7RGg2cJoMGuMGeeGjuT5rYQf2KCkibYgXIOQ==&quot;
+    },
+    {
+      &quot;$id&quot;: &quot;3&quot;,
+      &quot;route&quot;: &quot;M&quot;,
+      &quot;full_route&quot;: &quot;MACHKG&quot;,
+      &quot;flight_no&quot;: &quot;8SMN00&quot;,
+      &quot;departure_date_time_concrete&quot;: &quot;2018-01-02 13:00:00&quot;,
+      &quot;ticket_price&quot;: 160.0,
+      &quot;SupplierID&quot;: 1,
+      &quot;Markup&quot;: &quot;Bgt/QDJjs258mAlQ+VYMN1TPP7TIy5wJ5sm9vQbHZXtGqB0iDJGUh5m+1reZXgsOY0/synhZx7j1BQuxbcCtKNTnFVibZHtY4BhfNBG3OUzBg06/yhmUjmpPeWe8ocdvJvCuKviKK3kGJkZvH/uoixWEJczpTyn3YwZBB8IlkE65B+jcOwgnU2rm3GggybBBO6Jw5gHODND/ipRIgn04xW3d+Vwv1SssXjVX0nn8L/Po/c/+CA7RGg2cJoMGuMGeeGjuT5rYQf2KCkibYgXIOQ==&quot;
+    },
+    {
+      &quot;$id&quot;: &quot;4&quot;,
+      &quot;route&quot;: &quot;M&quot;,
+      &quot;full_route&quot;: &quot;MACHKG&quot;,
+      &quot;flight_no&quot;: &quot;8SMN15&quot;,
+      &quot;departure_date_time_concrete&quot;: &quot;2018-01-02 13:15:00&quot;,
+      &quot;ticket_price&quot;: 160.0,
+      &quot;SupplierID&quot;: 1,
+      &quot;Markup&quot;: &quot;Bgt/QDJjs258mAlQ+VYMN1TPP7TIy5wJ5sm9vQbHZXtGqB0iDJGUh5m+1reZXgsOY0/synhZx7j1BQuxbcCtKNTnFVibZHtY4BhfNBG3OUzBg06/yhmUjmpPeWe8ocdvJvCuKviKK3kGJkZvH/uoixWEJczpTyn3YwZBB8IlkE65B+jcOwgnU2rm3GggybBBO6Jw5gHODND/ipRIgn04xW3d+Vwv1SssXjVX0nn8L/Po/c/+CA7RGg2cJoMGuMGeeGjuT5rYQf2KCkibYgXIOQ==&quot;
+    },
+    {
+      &quot;$id&quot;: &quot;5&quot;,
+      &quot;route&quot;: &quot;M&quot;,
+      &quot;full_route&quot;: &quot;MACHKG&quot;,
+      &quot;flight_no&quot;: &quot;8SMN30&quot;,
+      &quot;departure_date_time_concrete&quot;: &quot;2018-01-02 13:30:00&quot;,
+      &quot;ticket_price&quot;: 160.0,
+      &quot;SupplierID&quot;: 1,
+      &quot;Markup&quot;: &quot;Bgt/QDJjs258mAlQ+VYMN1TPP7TIy5wJ5sm9vQbHZXtGqB0iDJGUh5m+1reZXgsOY0/synhZx7j1BQuxbcCtKNTnFVibZHtY4BhfNBG3OUzBg06/yhmUjmpPeWe8ocdvJvCuKviKK3kGJkZvH/uoixWEJczpTyn3YwZBB8IlkE65B+jcOwgnU2rm3GggybBBO6Jw5gHODND/ipRIgn04xW3d+Vwv1SssXjVX0nn8L/Po/c/+CA7RGg2cJoMGuMGeeGjuT5rYQf2KCkibYgXIOQ==&quot;
+    },
+    {
+      &quot;$id&quot;: &quot;6&quot;,
+      &quot;route&quot;: &quot;M&quot;,
+      &quot;full_route&quot;: &quot;MACHKG&quot;,
+      &quot;flight_no&quot;: &quot;8SMN45&quot;,
+      &quot;departure_date_time_concrete&quot;: &quot;2018-01-02 13:45:00&quot;,
+      &quot;ticket_price&quot;: 160.0,
+      &quot;SupplierID&quot;: 1,
+      &quot;Markup&quot;: &quot;Bgt/QDJjs258mAlQ+VYMN1TPP7TIy5wJ5sm9vQbHZXtGqB0iDJGUh5m+1reZXgsOY0/synhZx7j1BQuxbcCtKNTnFVibZHtY4BhfNBG3OUzBg06/yhmUjmpPeWe8ocdvJvCuKviKK3kGJkZvH/uoixWEJczpTyn3YwZBB8IlkE65B+jcOwgnU2rm3GggybBBO6Jw5gHODND/ipRIgn04xW3d+Vwv1SssXjVX0nn8L/Po/c/+CA7RGg2cJoMGuMGeeGjuT5rYQf2KCkibYgXIOQ==&quot;
+    },
+    {
+      &quot;$id&quot;: &quot;7&quot;,
+      &quot;route&quot;: &quot;M&quot;,
+      &quot;full_route&quot;: &quot;MACHKG&quot;,
+      &quot;flight_no&quot;: &quot;8SMO00&quot;,
+      &quot;departure_date_time_concrete&quot;: &quot;2018-01-02 14:00:00&quot;,
+      &quot;ticket_price&quot;: 160.0,
+      &quot;SupplierID&quot;: 1,
+      &quot;Markup&quot;: &quot;Bgt/QDJjs258mAlQ+VYMN1TPP7TIy5wJ5sm9vQbHZXtGqB0iDJGUh5m+1reZXgsOY0/synhZx7j1BQuxbcCtKNTnFVibZHtY4BhfNBG3OUzBg06/yhmUjmpPeWe8ocdvJvCuKviKK3kGJkZvH/uoixWEJczpTyn3YwZBB8IlkE65B+jcOwgnU2rm3GggybBBO6Jw5gHODND/ipRIgn04xW3d+Vwv1SssXjVX0nn8L/Po/c/+CA7RGg2cJoMGuMGeeGjuT5rYQf2KCkibYgXIOQ==&quot;
+    },
+    {
+      &quot;$id&quot;: &quot;8&quot;,
+      &quot;route&quot;: &quot;M&quot;,
+      &quot;full_route&quot;: &quot;MACHKG&quot;,
+      &quot;flight_no&quot;: &quot;8SMO30&quot;,
+      &quot;departure_date_time_concrete&quot;: &quot;2018-01-02 14:30:00&quot;,
+      &quot;ticket_price&quot;: 160.0,
+      &quot;SupplierID&quot;: 1,
+      &quot;Markup&quot;: &quot;Bgt/QDJjs258mAlQ+VYMN1TPP7TIy5wJ5sm9vQbHZXtGqB0iDJGUh5m+1reZXgsOY0/synhZx7j1BQuxbcCtKNTnFVibZHtY4BhfNBG3OUzBg06/yhmUjmpPeWe8ocdvJvCuKviKK3kGJkZvH/uoixWEJczpTyn3YwZBB8IlkE65B+jcOwgnU2rm3GggybBBO6Jw5gHODND/ipRIgn04xW3d+Vwv1SssXjVX0nn8L/Po/c/+CA7RGg2cJoMGuMGeeGjuT5rYQf2KCkibYgXIOQ==&quot;
+    },
+    {
+      &quot;$id&quot;: &quot;9&quot;,
+      &quot;route&quot;: &quot;M&quot;,
+      &quot;full_route&quot;: &quot;MACHKG&quot;,
+      &quot;flight_no&quot;: &quot;8SMO45&quot;,
+      &quot;departure_date_time_concrete&quot;: &quot;2018-01-02 14:45:00&quot;,
+      &quot;ticket_price&quot;: 160.0,
+      &quot;SupplierID&quot;: 1,
+      &quot;Markup&quot;: &quot;Bgt/QDJjs258mAlQ+VYMN1TPP7TIy5wJ5sm9vQbHZXtGqB0iDJGUh5m+1reZXgsOY0/synhZx7j1BQuxbcCtKNTnFVibZHtY4BhfNBG3OUzBg06/yhmUjmpPeWe8ocdvJvCuKviKK3kGJkZvH/uoixWEJczpTyn3YwZBB8IlkE65B+jcOwgnU2rm3GggybBBO6Jw5gHODND/ipRIgn04xW3d+Vwv1SssXjVX0nn8L/Po/c/+CA7RGg2cJoMGuMGeeGjuT5rYQf2KCkibYgXIOQ==&quot;
+    },
+    {
+      &quot;$id&quot;: &quot;10&quot;,
+      &quot;route&quot;: &quot;M&quot;,
+      &quot;full_route&quot;: &quot;MACHKG&quot;,
+      &quot;flight_no&quot;: &quot;8SMP00&quot;,
+      &quot;departure_date_time_concrete&quot;: &quot;2018-01-02 15:00:00&quot;,
+      &quot;ticket_price&quot;: 160.0,
+      &quot;SupplierID&quot;: 1,
+      &quot;Markup&quot;: &quot;Bgt/QDJjs258mAlQ+VYMN1TPP7TIy5wJ5sm9vQbHZXtGqB0iDJGUh5m+1reZXgsOY0/synhZx7j1BQuxbcCtKNTnFVibZHtY4BhfNBG3OUzBg06/yhmUjmpPeWe8ocdvJvCuKviKK3kGJkZvH/uoixWEJczpTyn3YwZBB8IlkE65B+jcOwgnU2rm3GggybBBO6Jw5gHODND/ipRIgn04xW3d+Vwv1SssXjVX0nn8L/Po/c/+CA7RGg2cJoMGuMGeeGjuT5rYQf2KCkibYgXIOQ==&quot;
+    }
+  ]
+}
+
+                            </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </body>
+        </html>

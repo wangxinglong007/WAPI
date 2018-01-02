@@ -1,0 +1,367 @@
+
+        <html lang="en"><head>
+        <meta charset="UTF-8">
+        <title>点火结果报告</title>
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+        <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/jquery-ui-1.10.4.custom.min.css">
+        <script src="/static/js/jquery-1.10.2.js"></script>
+        <script src="/static/js/jquery-ui-1.10.4.custom.js"></script>
+        <script src="/static/js/jquery-ui-1.10.4.custom.min.js"></script>
+        <script type="text/javascript">
+
+        </script>
+        <script type="text/javascript">
+            $(function() {
+            var status=$('.status');
+            var i=0;
+            for(var i=0;i<status.length;i++){
+                if(status.eq(i).html()!='200'){
+                    status.eq(i).parent().css({'color':'red','background':'#EEEEEE'});
+                }
+            }
+
+            });
+        
+        </script>
+        
+        
+        
+        
+        <style type="text/css">
+            *{margin: 0;padding: 0}
+            /*左侧API描述内容以及结果统计样式*/
+            #left_bar{width: 17%;margin-left: 1%; margin-top: 1.5%;float: left;	position:fixed;top:1%;left:1%;}
+            #result_count{ margin-top: 4%;}
+            #report_des ul :first-child,#result_count ul :first-child{font-size: 16px}
+            #report_des ul,#result_count ul{ font-size: 14px; }
+            /*右侧报告内容样式*/
+            #right_bar{float: left;width:78%; margin-left: 2%; margin-top: 1%;-webkit-box-shadow: 0 0 5px #cccccc; padding: 0.5%;position: absolute;top: 1%; left: 19%}
+            #report_div{}
+            #report_th{font-size: 12px;text-align: center;}
+            #report_th table{}
+            #report_th table tr th{background: #0084F3;color: white;text-align: left;font-size: 14px;}
+        
+            /*固定表格具体宽度*/
+            /*
+            #
+            .div_title table tr td{background: black;}*/
+        </style>
+        </head>
+        <body>
+            <div id="mainview">
+                <div id="left_bar">
+                    <div id="report_des">
+                        <ul class="list-group">
+                        <li class="list-group-item active">API Automation Description</li>
+                        <li class="list-group-item"><b>User:&nbsp;</b>chengyingxia</li>
+                        <li class="list-group-item"><b>StartTime:&nbsp;</b>2017-12-28 08:30:37</li>
+                        <li class="list-group-item"><b>UseTime:&nbsp;</b>0:00:02.746862</li>
+                        <li class="list-group-item"><b>Success:&nbsp;</b>与预期结果校验正确（ExpectResult）</li>
+                        <li class="list-group-item"><b>Fail:&nbsp;</b>与预期结果校验错误（ExpectResult） </li>
+                        <li class="list-group-item"><b>Error:&nbsp;</b>用例格式数据或输入错误 </li>
+                        </ul>
+                    </div>
+        
+                    <div id="result_count">
+                        <ul class="list-group">
+                        <li class="list-group-item active">Result Count</li>
+                        <li class="list-group-item"><b>Total:&nbsp;</b>30</li>
+                        <li class="list-group-item"><b>Status_200:&nbsp;</b>30</li>
+                        <li class="list-group-item"><b>Status_Other:&nbsp;</b>0</li>
+                    </ul></div>
+                </div>
+                <div id="right_bar">
+                        <div id="report_th" class="table-responsive">
+                                <table id="table_result" class="table">
+                        <tbody><tr>
+                            <th>ID</th>
+                            <th>SystemType</th>
+                            <th>ApiName</th>
+                            <th>Method</th>
+                            <th>Status</th>
+                            <th>ExecutionTime</th>
+                            <th>UseTime (S)</th>
+                        </tr>
+                        <tr>
+                        
+                            <td>1</td>
+                            <td>FBSFerry</td>
+                            <td title='/api/BaseApi'>/api/BaseApi</td>
+                            <td>options</td>
+                            <td class="status">200</td>
+                            <td>2017-12-28 08:30:37</td>
+                            <td>2017-07-06 11:12:51</td>
+                        </tr>
+                        
+                            <td>2</td>
+                            <td>FBSFerry</td>
+                            <td title='/api/BasicInfo'>/api/BasicInfo</td>
+                            <td>get</td>
+                            <td class="status">200</td>
+                            <td>2017-12-28 08:30:37</td>
+                            <td>2017-07-06 11:12:51</td>
+                        </tr>
+                        
+                            <td>3</td>
+                            <td>FBSFerry</td>
+                            <td title='/api/BasicInfo'>/api/BasicInfo</td>
+                            <td>options</td>
+                            <td class="status">200</td>
+                            <td>2017-12-28 08:30:37</td>
+                            <td>2017-07-06 11:12:51</td>
+                        </tr>
+                        
+                            <td>4</td>
+                            <td>FBSFerry</td>
+                            <td title='/api/BasicInfo'>/api/BasicInfo</td>
+                            <td>post</td>
+                            <td class="status">200</td>
+                            <td>2017-12-28 08:30:37</td>
+                            <td>2017-07-06 11:12:51</td>
+                        </tr>
+                        
+                            <td>5</td>
+                            <td>FBSFerry</td>
+                            <td title='/api/BasicInfoRoute'>/api/BasicInfoRoute</td>
+                            <td>get</td>
+                            <td class="status">200</td>
+                            <td>2017-12-28 08:30:38</td>
+                            <td>2017-07-06 11:12:51</td>
+                        </tr>
+                        
+                            <td>6</td>
+                            <td>FBSFerry</td>
+                            <td title='/api/BasicInfoRoute'>/api/BasicInfoRoute</td>
+                            <td>options</td>
+                            <td class="status">200</td>
+                            <td>2017-12-28 08:30:38</td>
+                            <td>2017-07-06 11:12:51</td>
+                        </tr>
+                        
+                            <td>7</td>
+                            <td>FBSFerry</td>
+                            <td title='/api/BasicInfoSeat'>/api/BasicInfoSeat</td>
+                            <td>get</td>
+                            <td class="status">200</td>
+                            <td>2017-12-28 08:30:38</td>
+                            <td>2017-07-06 11:12:51</td>
+                        </tr>
+                        
+                            <td>8</td>
+                            <td>FBSFerry</td>
+                            <td title='/api/BasicInfoSeat'>/api/BasicInfoSeat</td>
+                            <td>options</td>
+                            <td class="status">200</td>
+                            <td>2017-12-28 08:30:38</td>
+                            <td>2017-07-06 11:12:51</td>
+                        </tr>
+                        
+                            <td>9</td>
+                            <td>FBSFerry</td>
+                            <td title='/api/CksVoyage'>/api/CksVoyage</td>
+                            <td>options</td>
+                            <td class="status">200</td>
+                            <td>2017-12-28 08:30:38</td>
+                            <td>2017-07-06 11:12:51</td>
+                        </tr>
+                        
+                            <td>11</td>
+                            <td>FBSFerry</td>
+                            <td title='/api/Code'>/api/Code</td>
+                            <td>get</td>
+                            <td class="status">200</td>
+                            <td>2017-12-28 08:30:38</td>
+                            <td>2017-07-06 11:12:51</td>
+                        </tr>
+                        
+                            <td>12</td>
+                            <td>FBSFerry</td>
+                            <td title='/api/Code'>/api/Code</td>
+                            <td>options</td>
+                            <td class="status">200</td>
+                            <td>2017-12-28 08:30:39</td>
+                            <td>2017-07-06 11:12:51</td>
+                        </tr>
+                        
+                            <td>13</td>
+                            <td>FBSFerry</td>
+                            <td title='/api/Create2'>/api/Create2</td>
+                            <td>options</td>
+                            <td class="status">200</td>
+                            <td>2017-12-28 08:30:39</td>
+                            <td>2017-07-06 11:12:51</td>
+                        </tr>
+                        
+                            <td>14</td>
+                            <td>FBSFerry</td>
+                            <td title='/api/Create2'>/api/Create2</td>
+                            <td>post</td>
+                            <td class="status">200</td>
+                            <td>2017-12-28 08:30:39</td>
+                            <td>2017-07-06 11:12:51</td>
+                        </tr>
+                        
+                            <td>15</td>
+                            <td>FBSFerry</td>
+                            <td title='/api/Home'>/api/Home</td>
+                            <td>get</td>
+                            <td class="status">200</td>
+                            <td>2017-12-28 08:30:39</td>
+                            <td>2017-07-06 11:12:51</td>
+                        </tr>
+                        
+                            <td>16</td>
+                            <td>FBSFerry</td>
+                            <td title='/api/Home'>/api/Home</td>
+                            <td>options</td>
+                            <td class="status">200</td>
+                            <td>2017-12-28 08:30:39</td>
+                            <td>2017-07-06 11:12:51</td>
+                        </tr>
+                        
+                            <td>17</td>
+                            <td>FBSFerry</td>
+                            <td title='/api/Home'>/api/Home</td>
+                            <td>post</td>
+                            <td class="status">200</td>
+                            <td>2017-12-28 08:30:39</td>
+                            <td>2017-07-06 11:12:51</td>
+                        </tr>
+                        
+                            <td>19</td>
+                            <td>FBSFerry</td>
+                            <td title='/api/OrderDetail'>/api/OrderDetail</td>
+                            <td>options</td>
+                            <td class="status">200</td>
+                            <td>2017-12-28 08:30:39</td>
+                            <td>2017-07-06 11:12:51</td>
+                        </tr>
+                        
+                            <td>20</td>
+                            <td>FBSFerry</td>
+                            <td title='/api/OrderDetail'>/api/OrderDetail</td>
+                            <td>post</td>
+                            <td class="status">200</td>
+                            <td>2017-12-28 08:30:39</td>
+                            <td>2017-07-06 11:12:51</td>
+                        </tr>
+                        
+                            <td>21</td>
+                            <td>FBSFerry</td>
+                            <td title='/api/OrderList'>/api/OrderList</td>
+                            <td>options</td>
+                            <td class="status">200</td>
+                            <td>2017-12-28 08:30:39</td>
+                            <td>2017-07-06 11:12:51</td>
+                        </tr>
+                        
+                            <td>22</td>
+                            <td>FBSFerry</td>
+                            <td title='/api/OrderList'>/api/OrderList</td>
+                            <td>post</td>
+                            <td class="status">200</td>
+                            <td>2017-12-28 08:30:39</td>
+                            <td>2017-07-06 11:12:51</td>
+                        </tr>
+                        
+                            <td>23</td>
+                            <td>FBSFerry</td>
+                            <td title='/api/OrderResult'>/api/OrderResult</td>
+                            <td>options</td>
+                            <td class="status">200</td>
+                            <td>2017-12-28 08:30:39</td>
+                            <td>2017-07-06 11:12:51</td>
+                        </tr>
+                        
+                            <td>24</td>
+                            <td>FBSFerry</td>
+                            <td title='/api/OrderResult'>/api/OrderResult</td>
+                            <td>post</td>
+                            <td class="status">200</td>
+                            <td>2017-12-28 08:30:39</td>
+                            <td>2017-07-06 11:12:51</td>
+                        </tr>
+                        
+                            <td>25</td>
+                            <td>FBSFerry</td>
+                            <td title='/api/ScheduledDate'>/api/ScheduledDate</td>
+                            <td>get</td>
+                            <td class="status">200</td>
+                            <td>2017-12-28 08:30:39</td>
+                            <td>2017-07-06 11:12:51</td>
+                        </tr>
+                        
+                            <td>26</td>
+                            <td>FBSFerry</td>
+                            <td title='/api/ScheduledDate'>/api/ScheduledDate</td>
+                            <td>options</td>
+                            <td class="status">200</td>
+                            <td>2017-12-28 08:30:39</td>
+                            <td>2017-07-06 11:12:51</td>
+                        </tr>
+                        
+                            <td>27</td>
+                            <td>FBSFerry</td>
+                            <td title='/api/TransactionDetail'>/api/TransactionDetail</td>
+                            <td>options</td>
+                            <td class="status">200</td>
+                            <td>2017-12-28 08:30:40</td>
+                            <td>2017-07-06 11:12:51</td>
+                        </tr>
+                        
+                            <td>28</td>
+                            <td>FBSFerry</td>
+                            <td title='/api/TransactionDetail'>/api/TransactionDetail</td>
+                            <td>post</td>
+                            <td class="status">200</td>
+                            <td>2017-12-28 08:30:40</td>
+                            <td>2017-07-06 11:12:51</td>
+                        </tr>
+                        
+                            <td>29</td>
+                            <td>FBSFerry</td>
+                            <td title='/api/Verify'>/api/Verify</td>
+                            <td>options</td>
+                            <td class="status">200</td>
+                            <td>2017-12-28 08:30:40</td>
+                            <td>2017-07-06 11:12:51</td>
+                        </tr>
+                        
+                            <td>30</td>
+                            <td>FBSFerry</td>
+                            <td title='/api/Verify'>/api/Verify</td>
+                            <td>post</td>
+                            <td class="status">200</td>
+                            <td>2017-12-28 08:30:40</td>
+                            <td>2017-07-06 11:12:51</td>
+                        </tr>
+                        
+                            <td>31</td>
+                            <td>FBSFerry</td>
+                            <td title='/api/Voyage'>/api/Voyage</td>
+                            <td>options</td>
+                            <td class="status">200</td>
+                            <td>2017-12-28 08:30:40</td>
+                            <td>2017-07-06 11:12:51</td>
+                        </tr>
+                        
+                            <td>32</td>
+                            <td>FBSFerry</td>
+                            <td title='/api/Voyage'>/api/Voyage</td>
+                            <td>post</td>
+                            <td class="status">200</td>
+                            <td>2017-12-28 08:30:40</td>
+                            <td>2017-07-06 11:12:51</td>
+                        </tr>
+                        
+                
+                                </tbody></table>
+                         </div>
+                </div>
+            </div>
+        
+        </body></html>

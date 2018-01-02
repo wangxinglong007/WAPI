@@ -1,0 +1,107 @@
+	#loading{width:100%;height:100%;background:#000;opacity:0;
+	position:absolute;top:0px;color:white;z-index:50;
+	font-size:36px;font-family:'微软雅黑';text-align:center;padding-top:25%;
+	-webkit-transition:all 2s;display:none;}
+	#mainview{
+        width: 90%;margin-top: 1%;margin-left:5%;
+        -moz-box-shadow: 0 0 5px;/*firefox*/
+        -webkit-box-shadow: 0 0 5px;/*webkit*/
+        box-shadow: 0 0 5px;/*opera或ie9*/
+        -moz-border-radius:5px;
+        -webkit-border-radius:5px;
+        border-radius: 5px;
+        padding: 5px;}
+    #tarTop{
+        text-align: center; background: #0084F3;
+        height: 3%;
+        font-family: '微软雅黑';font-size: 24px;font-weight: bold;line-height: 40px;color: white;
+        -moz-box-shadow: 0 0 3px;
+        -webkit-box-shadow: 0 0 3px;
+        box-shadow: 0 0 3px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px; }
+        /*40px=3%*/
+    #oform{ margin-top: 1.5%; }
+    #input_div{margin-left:1%;width: 98%;}
+    #sel{width: 10%;}
+    #click_time{width: 12%;}
+    #end_time{width: 12%;}
+    /*restapi 系统选择*/
+    #systemcode{width: 15%;font-size: 18px;}
+    /*soapapi 系统选择*/
+    #soap_system_code{width: 15.7%;font-size: 16px;}
+
+    #enviorment{width: 10%;}
+    #case_id{width: 8%;height: 37px;}
+    #sub_case_id{width: 8%;}
+    #submit_btn{width:5%;background:#0084F3;color:white;margin-left:5%}
+    #submit_btn:hover{opacity:0.6;}
+
+
+
+    #search_thread{margin: 0 auto;margin-top: 2%;height:40px;background: #11A0FF; color: white; font-weight: bold; border-radius: 5px;}
+    #search_thread table{width:97%; height:100%;text-align: left;margin-left: 2%;border-collapse: separate;}
+    /*#search_thread table tr td{background: red}
+    .div_title table tr td{background: black;}*/
+    /*开始执行时间*/
+    #search_thread .ClickExecutionTime2{width:15.5%;}
+    /*接口名称*/
+    #search_thread .testCase__ApiName2{width: 33%;}
+    /*描述*/
+    #search_thread .testCase__Description2{width: 21.6%;}
+    /*ID*/
+    #search_thread .testCase_id2{width: 5%;}
+    /*执行步骤*/
+    #search_thread  .testCase__SetupStep2{width: 11%;}
+    /*环境*/
+    #search_thread  .Environment2{width: 5%;}
+    /*结果*/
+    #search_thread  .Status2{width: 9%;}
+    /*子用例使用样式  ID 步骤类型*/
+    #search_thread .SubCaseID_id2{width: 8%;}
+    #search_thread  .SubCaseID__SetupType2{width: 8%;}
+
+    /* soap 用例样式 testCase_id2*/
+    #search_thread .soapTestCase_id2{width: 8%;}
+    #search_thread .soapTestCase__SetupStep2{width: 8%;}
+    #search_thread .soapSubCase_id2{width: 5%;}
+
+
+    /*log内容样式*/
+    #accordion{--webkit-box-shadow: 0 0 5px; margin-top: 0.5%;}
+    #accordion div:nth-child(even){display:none;padding:25px;text-align:left;background:#F7F7F7;word-break: break-all;word-wrap:break-word;};
+    #accordion div:nth-child(odd){height:40px;};
+    .div_title{border-radius:10px;box-shadow: 0 0 5px #CCCCCC;}
+    .div_title table{height:40px;border-bottom:1px solid  #DDD;width: 97%;margin-left:2%;table-layout: fixed; text-align: left;border-collapse: separate;word-break: break-all; word-wrap: break-word;}
+    .div_title table tr td{overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}
+    /*开始执行时间*/
+    .div_title .ClickExecutionTime{width: 15.5%;}
+    /*接口名称*/
+    .div_title .testCase__ApiName,.SubCaseID__ApiName{width: 33%;}
+    /*描述*/
+    .div_title .testCase__Description,.SubCaseID__Description{width: 21.6%;}
+     /*ID*/
+    .div_title .testCase_id,.SubCaseID_id{width: 5%;}
+    .div_title .SubCaseID_id{width: 8%;}
+     /*执行步骤||步骤类型*/
+    .div_title .testCase__SetupStep,.SubCaseID__SetupType{width: 11%;}
+    .div_title .SubCaseID__SetupType{width: 8%;}
+    /*环境*/
+    .div_title .Environment{width: 5%;}
+     /*结果状态*/
+    .div_title .Status{ width: 9%; color:#6c6; font-weight:bold;}
+
+    /* soap 主用例样式 testCase_id2*/
+   .div_title .soapSubCase_id{width: 5%;}
+   .div_title .soapTestCase_id{width: 8%;}
+
+   .div_title .soapTestCase__Description,.soapSubCase__Description{width: 21.6%;}
+   .div_title .soapTestCase__SetupStep,.soapSubCase__SetupType{width: 8%;}
+
+
+
+
+
+
+

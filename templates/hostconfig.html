@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>hosts 文件修改</title>
+<div class="span9">
+<form action="/hostupdate/" method="post">
+ <fieldset>
+   <legend>/etc/hosts 文件修改</legend>
+    <span class="label label-warning">注意：须由熟悉配置人员修改</span>
+          &nbsp;&nbsp;&nbsp;&nbsp; {% if info%}  Success!! {{ now }} {% endif %}
+    <div align="left"><span  class="label label-info">/etc/hosts</span></div>
+    <textarea name="content" style="width:800px;height:750px;">{% if text %}{{ text }}{% endif %}</textarea>
+    <br><br><button type="submit" class="btn btn-info" name="save" action="nginx1">确认</button>
+    <button type="submit" class="btn btn-info" name="saveandfresh" action="nginx2">确认并flask缓存</button>
+    <button action="aa">取消</button>
+  </fieldset>
+</form>
+
+</div>
+

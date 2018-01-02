@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>点火结果报告</title>
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="/static/css/jquery-ui-1.10.4.custom.min.css" />
+<script src="/static/js/jquery-1.10.2.js"></script>
+<script src="/static/js/jquery-ui-1.10.4.custom.js"></script>
+<script src="/static/js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript">
+	// $(function() {
+	//     $( "#table_result" ).accordion({
+	//         collapsible: true
+	//     });
+	//   });
+
+</script>
+<script type="text/javascript">
+	$(function() {
+	var status=$('.status');
+	var i=0;
+	for(var i=0;i<status.length;i++){
+		if(status.eq(i).html()!='200'){
+			status.eq(i).parent().css({'color':'red','background':'#EEEEEE'});
+		}
+	}
+	// for( var i = 0; i < title_content.length; i++ ) {
+ //     		//alert(title_content.eq(i).children("td:last-child").html());
+ //     		var result_td=title_content.eq(i).children("td:last-child");
+ //     		if(result_td.html()!='Success'){
+ //     			result_td.css('color','red');
+ //     		}
+	// }
+	});
+
+</script>
+
+
+
+
+<style type="text/css">
+	*{margin: 0;padding: 0}
+	/*左侧API描述内容以及结果统计样式*/
+	#left_bar{width: 17%;margin-left: 1%; margin-top: 1.5%;float: left;	position:fixed;top:1%;left:1%;}
+	#result_count{ margin-top: 4%;}
+	#report_des ul :first-child,#result_count ul :first-child{font-size: 16px}
+	#report_des ul,#result_count ul{ font-size: 14px; }
+	/*右侧报告内容样式*/
+	#right_bar{float: left;width:78%; margin-left: 2%; margin-top: 1%;-webkit-box-shadow: 0 0 5px #cccccc; padding: 0.5%;position: absolute;top: 1%; left: 19%}
+	#report_div{}
+	#report_th{font-size: 12px;text-align: center;}
+	#report_th table{}
+	#report_th table tr th{background: #0084F3;color: white;text-align: center;font-size: 14px;}
+
+	/*固定表格具体宽度*/
+	/*
+	#
+	.div_title table tr td{background: black;}*/
+</style>
+</head>
+<body>
+	<div id="mainview">
+		<div id="left_bar">
+			<div id="report_des">
+				<ul class="list-group">
+				<li class="list-group-item active">API Automation Description</li>
+				<li class="list-group-item"><b>User:</b>xinglongwang</li>
+				<li class="list-group-item"><b>StartTime:</b>2017-11-22 09:37:49.427000</li>
+				<li class="list-group-item"><b>UseTime:</b>0:00:00.080000 </li>
+				<li class="list-group-item"><b>Success:</b>与预期结果校验正确（ExpectResult）</li>
+				<li class="list-group-item"><b>Fail:</b>与预期结果校验错误（ExpectResult） </li>
+				<li class="list-group-item"><b>Error:</b>用例格式数据或输入错误 </li>
+				</ul>
+			</div>
+
+			<div id="result_count">
+				<ul class="list-group">
+				<li class="list-group-item active">Result Count</li>
+				<li class="list-group-item"><b>Total:&nbsp;&nbsp;</b>0</li>
+				<li class="list-group-item"><b>Status_200:&nbsp;&nbsp;</b>0</li>
+				<li class="list-group-item"><b>Status_Other:&nbsp;&nbsp;</b>0</li>
+			</div>
+		</div>
+		<div id="right_bar">
+		        <div id="report_th" class="table-responsive">
+		                <table id="table_result" class="table">
+				<tr>
+					<th>ID</th>
+					<th>SystemType</th>
+					<th>ApiName</th>
+					<th>Method</th>
+					<th>Status</th>
+					<th>ExecutionTime</th>
+					<th>UseTime (S)</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>PBSDynamicH5</td>
+					<td>/Product/Theme/{ThemeID}</td>
+					<td>post</td>
+					<td class="status">200</td>
+					<td>2017-10-31 19:00:57.729257</td>
+					<td>0.0177059173584</td>
+				</tr>
+				<tr class="danger">
+					<td>1</td>
+					<td>PBSDynamicH5</td>
+					<td>/Product/Theme/{ThemeID}</td>
+					<td>post</td>
+					<td class="status">200</td>
+					<td>2017-10-31 19:00:57.729257</td>
+					<td>0.0177059173584</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>PBSDynamicH5</td>
+					<td>/Product/Theme/{ThemeID}</td>
+					<td>post</td>
+					<td class="status">200</td>
+					<td>2017-10-31 19:00:57.729257</td>
+					<td>0.0177059173584</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>PBSDynamicH5</td>
+					<td>/Product/Theme/{ThemeID}</td>
+					<td>post</td>
+					<td class="status">200</td>
+					<td>2017-10-31 19:00:57.729257</td>
+					<td>0.0177059173584</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>PBSDynamicH5</td>
+					<td>/Booking/MotoBack4Web/{ProductId}/{TempOrderId}/{PkgOrderNO}</td>
+					<td>post</td>
+					<td class="status">200</td>
+					<td>2017-10-31 19:00:57.729257</td>
+					<td>0.0177059173584</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>PBSDynamicH5</td>
+					<td>/Product/Theme/{ThemeID}</td>
+					<td>post</td>
+					<td class="status">500</td>
+					<td>2017-10-31 19:00:57.729257</td>
+					<td>0.0177059173584</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>PBSDynamicH5</td>
+					<td>/Product/Theme/{ThemeID}</td>
+					<td>post</td>
+					<td class="status">200</td>
+					<td>2017-10-31 19:00:57.729257</td>
+					<td>0.0177059173584</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>PBSDynamicH5</td>
+					<td>/Product/Theme/{ThemeID}</td>
+					<td>post</td>
+					<td class="status">200</td>
+					<td>2017-10-31 19:00:57.729257</td>
+					<td>0.0177059173584</td>
+				</tr>
+
+		                </table>
+		         </div>
+		</div>
+	</div>
+</body>
+</html>

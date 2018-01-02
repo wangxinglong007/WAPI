@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.fl {
+    float: left;
+}
+
+.box {
+    height: 40px;
+    line-height: 40px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; // 按钮
+    button {
+        padding: 0 10px;
+        margin: 0 10px;
+        height: 40px;
+        .fl;
+        cursor: pointer;
+        border: 1px solid #ebebeb;
+        background-color: #ffffff;
+    } // 首页、尾页按钮
+    .first-page,
+    .last-page {
+        margin: 0;
+    } // 页码块
+    .pageWrap {
+        height: 40px;
+        .fl;
+        overflow: hidden;
+        ul {
+            width: 100000px;
+            height: 40px;
+            .fl;
+            li {
+                width: 60px;
+                height: 40px;
+                border: 1px solid #ebebeb;
+                line-height: 40px;
+                box-sizing: border-box;
+                cursor: pointer;
+                .fl;
+            } // 选中页码
+            .sel-page {
+                background-color: yellow; //选中时的颜色
+            }
+        }
+    } // 跳转页
+    .jump-text {
+        width: 60px;
+        height: 40px;
+        box-sizing: border-box;
+        text-align: center;
+        margin: 0 5px;
+        .fl;
+    } // 跳转按钮
+    .jump-button {
+        margin:0;
+        .fl;
+    } // 总页数,总条目数
+    .total-pages,
+    .total-count {
+        margin-left: 10px;
+        .fl;
+        font-size: 14px;
+    }
+}
