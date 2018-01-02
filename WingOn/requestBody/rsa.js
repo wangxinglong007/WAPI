@@ -50,7 +50,7 @@
 /**
  * @File c.util.rsa.js
  * @Description: RSA加密模块
- * @author shbzhang@ctrip.com
+ * @author XXX@XXX.com
  * @date 2014-09-26 16:21:29
  * @version V1.0
  */
@@ -870,7 +870,7 @@ function groupEncode(orgData) {
 var rsa = {
   encrypt: function (str) {
     setMaxDigits(131);
-    return encryptedString(new RSAKeyPair("010001", "", "D1310D64F8790FF3ADC9772F78611D5C640079B6F90108868D3534B347183DB6B085DC5B6748263F6981DCBC2CA0FCB407C0ECC640A73667BDFDD925C6A071B813F4C15B2494CFF47D877E71DFF86E20E9CD864CB4ADE4A2E9ED3E98D977F91F6AD015CE5E0C4B9A2828C4B6778EA5C1B8846CA75B94DDD849248C11F7133E9D"),
+    return encryptedString(new RSAKeyPair("010001", "", "XXXXXX"), # edit rsa indev branch
 
       base64encode(str));
   }
