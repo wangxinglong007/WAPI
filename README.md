@@ -1,4 +1,4 @@
-# Djano admin WAPI
+# Django admin WAPI
 The WAPI is an API automation interface test platform developed based on the [Django admin](https://docs.djangoproject.com/en/2.0/ref/contrib/admin/) framework.
 * Supports HTTP, HTTPS and SOAP protocol interfaces.
 * Support request parameterization and data transfer of associated interfaces.
@@ -38,5 +38,5 @@ You can deploy on Apache or run in you PC. For example(python manager.py runserv
 
 # Plan
 * [Use the Django REST Framework](http://www.django-rest-framework.org/)
-* Add performance test functionality
+* Add performance test functionality [locust](https://docs.locust.io/en/latest/)
 * Add statistical function (API, subsystem success rate, failure rate, etc.)
