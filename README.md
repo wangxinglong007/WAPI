@@ -35,12 +35,10 @@ Dependent libraries in [requirements.txt](https://github.com/wangxinglong007/WAP
 
 # Running
         You can deploy on Apache or run in you PC. For example
-        ```python
-        python manager.py runserver
-        ```python 
+        `python manager.py runserver`
         And if you need tasks function, must be running celery
-        ```python manage.py celery worker -l info```
-        ```python manage.py celery beat```
+        `python manage.py celery worker -l info`
+        `python manage.py celery beat`
 
 # Plan
 * Use the [Django REST Framework](http://www.django-rest-framework.org/)
