@@ -1,7 +1,8 @@
-#Djano admin WAPI
-WAPI 是基于 [Django admin](https://docs.djangoproject.com/en/2.0/ref/contrib/admin/) 框架开发的API自动化接口测试平台， 支持HTTP，HTTPS和SOAP协议的接口；支持请求的参数化、以及关联接口的数据传递；支持点火测试、冒烟、可业务流程测试、可单接口测试并生成测试报告；支持发送邮件和支持发送微信推送消息；支持队列服务执行Task任务；支持配置多环境host（DEV\TEST\PROD环境）等。
+# Djano admin WAPI\<br>
+WAPI 是基于 [Django admin](https://docs.djangoproject.com/en/2.0/ref/contrib/admin/) 框架开发的API自动化接口测试平台，
+支持HTTP，HTTPS和SOAP协议的接口；\<br>支持请求的参数化、以及关联接口的数据传递；支持点火测试、冒烟、可业务流程测试、可单接口测试并生成测试报告；支持发送邮件和支持发送微信推送消息；支持队列服务执行Task任务；支持配置多环境host（DEV\TEST\PROD环境）等。
 
-#Documentation
+# Documentation
 Python 2.7
 查看安装库 requirements.txt:
 Django==1.11
@@ -19,8 +20,8 @@ BeautifulSoup==3.2.1
 beautifulsoup4==4.5.3
 celery==3.1.25
 
-#Installation
+# Installation
 使用  pip install -r requirements.txt 安装
 
-#Deploy
+# Deploy
 可以部署在Apache(网络上有很多资料)，或者直接就用自己本机运行python manager.py runserver
