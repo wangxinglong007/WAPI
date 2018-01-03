@@ -7,6 +7,9 @@ The WAPI is an API automation interface test platform developed based on the [Dj
 * Support queue service to perform Task tasks.
 * Support for configuring multiple environments host (DEV \TEST\PROD environment), etc.
 
+(https://github.com/wangxinglong007/WAPI/blob/master/PBS_Dynamic/media/introduce_img/wapi.gif)
+(https://github.com/wangxinglong007/WAPI/blob/master/PBS_Dynamic/media/introduce_img/log.gif)
+
 # Dependencies
 * Python 2.7
 Dependent libraries in [requirements.txt](https://github.com/wangxinglong007/WAPI/blob/master/requirements.txt)
@@ -27,8 +30,13 @@ Dependent libraries in [requirements.txt](https://github.com/wangxinglong007/WAP
 * celery==3.1.25
 
 # Installation and Configuration
-* run pip install -r requirements.txt
-* and configuration [settings.py](https://github.com/wangxinglong007/WAPI/blob/master/ApiCaseSystem/settings.py)
+* Run pip install -r requirements.txt
+* And configuration [settings.py](https://github.com/wangxinglong007/WAPI/blob/master/ApiCaseSystem/settings.py)
 
 # Running
 You can deploy on Apache or run in you PC. For example(python manager.py runserver)
+
+# Plan
+* [Use the Django REST Framework](http://www.django-rest-framework.org/)
+* Add performance test functionality
+* Add statistical function (API, subsystem success rate, failure rate, etc.)
