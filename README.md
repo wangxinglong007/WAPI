@@ -7,8 +7,8 @@ The WAPI is an API automation interface test platform developed based on the [Dj
 * Support queue service to perform Task tasks.
 * Support for configuring multiple environments host (DEV \TEST\PROD environment), etc.
 
-(https://github.com/wangxinglong007/WAPI/blob/master/PBS_Dynamic/media/introduce_img/wapi.gif)
-(https://github.com/wangxinglong007/WAPI/blob/master/PBS_Dynamic/media/introduce_img/log.gif)
+![WAPI](https://github.com/wangxinglong007/WAPI/blob/master/PBS_Dynamic/media/introduce_img/wapi.gif)
+![Log](https://github.com/wangxinglong007/WAPI/blob/master/PBS_Dynamic/media/introduce_img/log.gif)
 
 # Dependencies
 * Python 2.7
