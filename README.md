@@ -1,19 +1,32 @@
 # Django admin WAPI
-The WAPI is an API automation interface test platform developed based on the [Django admin](https://docs.djangoproject.com/en/2.0/ref/contrib/admin/) framework.
+The WAPI is an automation interface test platform
+developed based on the [Django admin](https://docs.djangoproject.com/en/2.0/ref/contrib/admin/) framework.
+Mainly composed of 7 modules:
+
+- API use case management system (add/delete/view/search use cases)
+- API suite management system (in a single system or in a single version for a set of packages)
+- API Task management system (asynchronous Task)
+- Environment system configuration (environment domain name Host or system domain name Host)
+- Log system (query record API execution results)
+- Feedback system (after troubleshoot the wrong reasons)
+- Statistical system (statistical API/system robustness, etc.)
+
+At the moment, Is a ` Django admin ` as the main framework implementations,
+Later will use ` Django + the Bootstrap + JS + RESTful ` technology to realize the comprehensive transformation,
+Now we has achieved five big modules, then we will further develop.
+
+# Features
 * Supports HTTP, HTTPS and SOAP protocol interfaces.
 * Support request parameterization and data transfer of associated interfaces.
 * Support ignition test, smoke, business process test, single interface test and generate test report.
 * Support sending mail and support sending WeChat push messages.
 * Support queue service to perform Task tasks.
 * Support for configuring multiple environments host (DEV \TEST\PROD environment), etc.
-
-![WAPI](https://github.com/wangxinglong007/WAPI/blob/master/PBS_Dynamic/media/introduce_img/wapi.gif)
-![Log](https://github.com/wangxinglong007/WAPI/blob/master/PBS_Dynamic/media/introduce_img/log.gif)
+* Support logging query
 
 # Dependencies
-* Python 2.7
+Use Python 2.7 and
 Dependent libraries in [requirements.txt](https://github.com/wangxinglong007/WAPI/blob/master/requirements.txt)
-
 * Django==1.11
 * django-celery==3.2.1
 * django-kombu==0.9.4
@@ -34,14 +47,21 @@ Dependent libraries in [requirements.txt](https://github.com/wangxinglong007/WAP
 * And configuration [settings.py](https://github.com/wangxinglong007/WAPI/blob/master/ApiCaseSystem/settings.py)
 
 # Running
-1.You can deploy on Apache or run in you PC. For example:
-        `python manager.py runserver`
-2.And if you need tasks function, must be running celery.
-        `python manage.py celery worker -l info`
-        ```python manage.py celery beat```
+You can deploy on Apache or run in you PC. For example:
+
+        python manager.py runserver
+And if you need tasks function, must be running celery.
+
+        python manage.py celery worker -l info
+        python manage.py celery beat
 
 # Plan
 * Use the [Django REST Framework](http://www.django-rest-framework.org/)
 * Add performance test functionality [locust](https://docs.locust.io/en/latest/)
-* Add statistical function (API, subsystem success rate, failure rate, etc.)
+* Add statistical function (API, subsystem success rate, failure rate, etc.)[highcharts](https://www.hcharts.cn/demo/highcharts)
 * Use the [django-bootstrap](https://github.com/zostera/django-bootstrap4) refactoring page
+* Feedback system And automatically bring bug
+
+# Show
+![WAPI](https://github.com/wangxinglong007/WAPI/blob/master/PBS_Dynamic/media/introduce_img/wapi.gif)
+![Log](https://github.com/wangxinglong007/WAPI/blob/master/PBS_Dynamic/media/introduce_img/log.gif)
