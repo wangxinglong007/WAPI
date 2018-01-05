@@ -47,10 +47,11 @@ Dependent libraries in [requirements.txt](https://github.com/wangxinglong007/WAP
 * And configuration [settings.py](https://github.com/wangxinglong007/WAPI/blob/master/ApiCaseSystem/settings.py)
 
 # Running
-You can deploy on Apache or run in you PC. For example:
+You can deploy on [Apache](https://docs.djangoproject.com/en/1.11/howto/deployment/wsgi/modwsgi/) or run in you PC.\
+For example in my PC:
 
         python manager.py runserver
-And if you need tasks function, must be running celery.
+And if you need tasks function, must be running [celery](http://docs.celeryproject.org/en/3.1/django/index.html).
 
         python manage.py celery worker -l info
         python manage.py celery beat
@@ -58,7 +59,7 @@ And if you need tasks function, must be running celery.
 # Plan
 * Use the [Django REST Framework](http://www.django-rest-framework.org/)
 * Add performance test functionality [locust](https://docs.locust.io/en/latest/)
-* Add statistical function (API, subsystem success rate, failure rate, etc.)[highcharts](https://www.hcharts.cn/demo/highcharts)
+* Add statistical function (API, subsystem success rate, failure rate, etc.)  [highcharts](https://www.hcharts.cn/demo/highcharts)
 * Use the [django-bootstrap](https://github.com/zostera/django-bootstrap4) refactoring page
 * Feedback system And automatically bring bug
 
