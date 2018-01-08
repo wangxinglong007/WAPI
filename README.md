@@ -42,9 +42,18 @@ Dependent libraries in [requirements.txt](https://github.com/wangxinglong007/WAP
 * beautifulsoup4==4.5.3
 * celery==3.1.25
 
-# Installation and Configuration
+
+# Install and Configuration
 * Run pip install -r requirements.txt
 * And configuration [settings.py](https://github.com/wangxinglong007/WAPI/blob/master/ApiCaseSystem/settings.py)
+
+
+Windows installation mysqlclient can have a lot of problems, and you need
+install some application(For example)
+
+* [mysqlclient](https://www.lfd.uci.edu/~gohlke/pythonlibs/#mysqlclient)
+* [Microsoft Visual C++ Compiler for Python 2.7](https://www.microsoft.com/en-us/download/details.aspx?id=44266)
+* [mysql-connector-c-6.0.2-winx64.msi](https://dev.mysql.com/downloads/connector/c/6.0.html)
 
 # Running
 You can deploy on [Apache](https://docs.djangoproject.com/en/1.11/howto/deployment/wsgi/modwsgi/) or run in you PC.\
