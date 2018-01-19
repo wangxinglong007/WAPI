@@ -73,9 +73,9 @@ There may be problems with execute `python manage.py makemigrations`.
 
     Solution:
 
-    a.Upgrade mysql to 5.5+
+    **a.** Upgrade mysql to 5.5+
 
-    b.Set DataBase Character set:  **utf8mb4 -- UTF-8 Unicode** and Set collation **utf8mb4_unicode_ci**
+    **b.** Set DataBase Character set:  **utf8mb4 -- UTF-8 Unicode** and Set collation **utf8mb4_unicode_ci**
        ```mysql
        CREATE DATABASE `wapi_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */
        ```
@@ -95,14 +95,14 @@ There may be problems with execute `python manage.py makemigrations`.
 
     class DjceleryConf(AppConfig):
         name = 'djcelery'
-    verbose_name = u'Task'
+        verbose_name = u'Task'
     ```
 
 3.  `(1146, "Table 'django_apisys.PBS_Dynamic_testcase' doesn't exist")` Because, the mysql table name is case-insensitive in Windows and case sensitive in Linux.
 
     Solution: There are two ways to solve the problem.
 
-    a. Add **db_table** an attribute to `model.py`. For example:
+    **a.** Add **db_table** an attribute to `model.py`. For example:
     ```python
     class TestCase(APITestCaseComment):
         .....
@@ -114,7 +114,7 @@ There may be problems with execute `python manage.py makemigrations`.
             db_table = 'PBS_Dynamic_testcase'
     ```
 
-    b. Change the table name pbs_dynamic_testcase to PBS_Dynamic_testcase.
+    **b.** Change the table name pbs_dynamic_testcase to PBS_Dynamic_testcase.
 
 # Plan
 * Use the [Django REST Framework](http://www.django-rest-framework.org/)
