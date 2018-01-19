@@ -48,15 +48,15 @@ Dependent libraries in [requirements.txt](https://github.com/wangxinglong007/WAP
 * And configuration [settings.py](https://github.com/wangxinglong007/WAPI/blob/master/ApiCaseSystem/settings.py)
 
 
-Windows installation mysqlclient can have a lot of problems, and you need
-install some application(For example)
+Windows installation `mysqlclient` can have a lot of problems, and you need
+install some application (For example)
 
 * [mysqlclient](https://www.lfd.uci.edu/~gohlke/pythonlibs/#mysqlclient)
 * [Microsoft Visual C++ Compiler for Python 2.7](https://www.microsoft.com/en-us/download/details.aspx?id=44266)
 * [mysql-connector-c-6.0.2-winx64.msi](https://dev.mysql.com/downloads/connector/c/6.0.html)
 
 # Running
-You can deploy on [Apache](https://docs.djangoproject.com/en/1.11/howto/deployment/wsgi/modwsgi/) or run in you PC.\
+You can deploy on [Apache](https://docs.djangoproject.com/en/1.11/howto/deployment/wsgi/modwsgi/) or run in you PC.
 For example in my PC:
 
         python manager.py runserver
@@ -64,6 +64,57 @@ And if you need tasks function, must be running [celery](http://docs.celeryproje
 
         python manage.py celery worker -l info
         python manage.py celery beat
+
+# Problems with deployment
+There may be problems with execute `python manage.py makemigrations`.
+1.  The mysql version does not support this. such as:
+
+    ```django.db.utils.OperationalError: (2019, "Can't initialize character set utf8m64 (path: /usr/local/mysql/share/mysql/charsets/)")```
+
+    Solution:
+
+    a.Upgrade mysql to 5.5+
+
+    b.Set DataBase Character set:  **utf8mb4 -- UTF-8 Unicode** and Set collation **utf8mb4_unicode_ci**
+       ```mysql
+       CREATE DATABASE `wapi_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */
+       ```
+
+2.  `djcelery.app.DjceleryConf ImportError: No module named DjceleryConf`
+
+    Solution: Modify the code in `Python27\Lib\site-packages\djcelery\app.py`
+    ```python
+    # -*- coding: utf-8 -*-
+    from __future__ import absolute_import, unicode_literals
+
+    from celery import current_app
+    from django.apps import AppConfig
+
+    #: The Django-Celery app instance.
+    app = current_app._get_current_object()
+
+    class DjceleryConf(AppConfig):
+        name = 'djcelery'
+    verbose_name = u'Task'
+    ```
+
+3.  `(1146, "Table 'django_apisys.PBS_Dynamic_testcase' doesn't exist")` Because, the mysql table name is case-insensitive in Windows and case sensitive in Linux.
+
+    Solution: There are two ways to solve the problem.
+
+    a. Add **db_table** an attribute to `model.py`. For example:
+    ```python
+    class TestCase(APITestCaseComment):
+        .....
+        User = models.CharField('user', max_length=32, null=True, blank=True)
+        .....
+
+        class Meta:
+            ......
+            db_table = 'PBS_Dynamic_testcase'
+    ```
+
+    b. Change the table name pbs_dynamic_testcase to PBS_Dynamic_testcase.
 
 # Plan
 * Use the [Django REST Framework](http://www.django-rest-framework.org/)
