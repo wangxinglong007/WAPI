@@ -58,17 +58,17 @@ install some application (For example)
 # Database
 * Create a database.
 
-       ```
        CREATE DATABASE `wapi_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */
-       ```
-* Import tables. [test_django.sql](https://github.com/wangxinglong007/WAPI/blob/master/test_django.sql)
 
-* If there are some files in the migrations folder. First, you just need **`__init__.py`** to delete other files.
+* Import tables. Download this [test_django.sql](https://github.com/wangxinglong007/WAPI/blob/master/test_django.sql) file and import form you databases.
+
+* If there are some files in the migrations folder. First,  you just need **`__init__.py`** and delete other files.
     Next Create file in **migrations**  such:
 
-        1. `python manage.py makemigrations`
+        1. python manage.py makemigrations
 
-        2. `python manage.py migrate --fake`   **--fake**  this parameter is very important.
+        2. python manage.py migrate --fake
+            (--fake  this parameter is very important.)
 
 # Running
 You can deploy on [Apache](https://docs.djangoproject.com/en/1.11/howto/deployment/wsgi/modwsgi/) or run in you PC.
