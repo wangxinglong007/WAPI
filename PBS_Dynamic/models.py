@@ -169,6 +169,7 @@ class TestCase(APITestCaseComment):
     class Meta:
         verbose_name = 'TestCase'
         verbose_name_plural = '主测试用例'
+        db_table = 'PBS_Dynamic_testcase'
 
 
 class SubTestCase(APITestCaseComment):
