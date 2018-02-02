@@ -74,7 +74,7 @@ install some application (For example)
 You can deploy on [Apache](https://docs.djangoproject.com/en/1.11/howto/deployment/wsgi/modwsgi/) or run in you PC.
 For example in my PC:
 
-        python manager.py runserver
+        python manage.py runserver
 And if you need tasks function, must be running [celery](http://docs.celeryproject.org/en/3.1/django/index.html).
 
         python manage.py celery worker -l info
