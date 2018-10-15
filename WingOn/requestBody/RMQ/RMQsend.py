@@ -8,7 +8,7 @@ import redis
 
 def send_to_rmq(org_data):
     credentials = pika.PlainCredentials('admin', 'admin')
-    parameters = pika.ConnectionParameters('172.18.21.189', 5672, 'TicketTest', credentials)
+    parameters = pika.ConnectionParameters('host', 'port', 'xxxxTest', credentials)
     connection = pika.BlockingConnection(parameters)
     channel = connection.channel()
     uuid_ = uuid.uuid4().__str__()
@@ -23,7 +23,7 @@ def send_to_rmq(org_data):
 
 
 def uuid_get_data(uuid):
-    r = redis.Redis(host='172.18.21.104', port=6379)
+    r = redis.Redis(host='host', port='port')
     while r.get(uuid) is None:
         time.sleep(0.5)
     return r.get(uuid)
