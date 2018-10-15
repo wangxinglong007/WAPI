@@ -26,10 +26,10 @@ class TemplateHtml:
         <script type="text/javascript"  src="{% static 'WEB_API/js/common/jquery-ui-1.10.4.custom.js' %}"></script>
         <script type="text/javascript"  src="{% static 'WEB_API/js/common/jquery-ui-1.10.4.custom.min.js' %}"></script>
         
-        <link rel="stylesheet" href="E:\\ctrip\\work\\backup\\ApiCaseVersion\\ApiCaseSystem\\static\\WEB_API\\css\\common\\jquery-ui-1.10.4.custom.min.css" />
-        <script type="text/javascript"  src="E:\\ctrip\\work\\backup\\ApiCaseVersion\\ApiCaseSystem\\static\\WEB_API\\js\\common\\jquery-1.10.2.js"></script>
-        <script type="text/javascript"  src="E:\\ctrip\\work\\backup\\ApiCaseVersion\\ApiCaseSystem\\static\\WEB_API\\js\\common\\jquery-ui-1.10.4.custom.js"></script>
-        <script type="text/javascript"  src="E:\\ctrip\\work\\backup\\ApiCaseVersion\\ApiCaseSystem\\static\\WEB_API\\js\\common\\jquery-ui-1.10.4.custom.min.js"></script>
+        <link rel="stylesheet" href="E:\\xxxx\\work\\backup\\ApiCaseVersion\\ApiCaseSystem\\static\\WEB_API\\css\\common\\jquery-ui-1.10.4.custom.min.css" />
+        <script type="text/javascript"  src="E:\\xxxx\\work\\backup\\ApiCaseVersion\\ApiCaseSystem\\static\\WEB_API\\js\\common\\jquery-1.10.2.js"></script>
+        <script type="text/javascript"  src="E:\\xxxx\\work\\backup\\ApiCaseVersion\\ApiCaseSystem\\static\\WEB_API\\js\\common\\jquery-ui-1.10.4.custom.js"></script>
+        <script type="text/javascript"  src="E:\\xxxx\\work\\backup\\ApiCaseVersion\\ApiCaseSystem\\static\\WEB_API\\js\\common\\jquery-ui-1.10.4.custom.min.js"></script>
 
         <script type="text/javascript">
 
