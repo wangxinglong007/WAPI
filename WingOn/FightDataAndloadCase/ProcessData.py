@@ -63,7 +63,7 @@ class ProcessData:
                             tran = InterfaceCase(setup_data)
                             setup_case_status = 3
                             result = tran.run_test(dict_parameter, common_data.environment)
-                            if '/Booking/CheckChange/' in setup_data.api_name:
+                            if '/Bxxx/CheckCxhaxxxxngexxx/' in setup_data.api_name:
                                 result = result_load_sometimes(setup_data, test_data, result, tran,
                                                                dict_parameter, common_data)
 
@@ -387,7 +387,7 @@ def body_result_setup(setup_data):
 
 def result_load_sometimes(setup_data, test_data, result, tran, dict_parameter, common_data):
     """
-    检查 /Booking/CheckChange/ 接口返回值
+    检查 /Bxxxxxg/Checkxxxxxxxxxxx/ 接口返回值
     :param setup_data:              子用例结构体
     :param test_data:               主用例结构体
     :param result:                  接口返回的结果 
@@ -396,7 +396,7 @@ def result_load_sometimes(setup_data, test_data, result, tran, dict_parameter, c
     :param common_data:             实例数据
     :return:                        返回结果
     """
-    # if '/Booking/CheckChange/' in setup_data.api_name:
+    # if '/Bxxxxx/Checkxxxxx/' in setup_data.api_name:
 
     result_load = json.loads(result)
     if result_load['head']['errcode'] == 0:
