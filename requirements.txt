@@ -7,7 +7,7 @@ redis==2.10.5
 bs4==0.0.1
 lxml==3.8.0
 kombu==3.0.37
-pyOpenSSL==17.0.0
+pyOpenSSL==17.5.0
 pyv8==1.0
 BeautifulSoup==3.2.1
 beautifulsoup4==4.5.3
